@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `mascotas`;
 CREATE TABLE `mascotas` (
   `mascotID` int DEFAULT NULL,
   `nombre` varchar(50) DEFAULT NULL,
-  `FecNac` int DEFAULT NULL,
   `raza` varchar(50) DEFAULT NULL,
   `color` varchar(50) DEFAULT NULL,
-  `peso` decimal(2,0) DEFAULT NULL,
-  `sexo` tinyint(1) DEFAULT NULL
+  `peso` varchar(50) DEFAULT NULL,
+  `sexo` varchar(50) DEFAULT NULL,
+  `Fecha_nacimiento` char(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -39,6 +39,7 @@ CREATE TABLE `mascotas` (
 
 LOCK TABLES `mascotas` WRITE;
 /*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
+INSERT INTO `mascotas` VALUES (1,'tasha','schnauzer','plata','6kg','F','15/07/13'),(2,'malu','schnauzer','gris','9kg','F','21/08/16'),(3,'kante','bulldog frances','negro','11kg','m','12/11/21'),(4,'snoopy','pastor aleman','negro','13kg','M','29/08/14'),(5,'toto','bulldog ingles','blanco','19kg','M','30/02/10');
 /*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +54,8 @@ CREATE TABLE `medicoveterinario` (
   `medVetID` int DEFAULT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `telefono` int DEFAULT NULL,
-  `direccion` varchar(50) DEFAULT NULL
+  `direccion` varchar(50) DEFAULT NULL,
+  `sexo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,6 +65,7 @@ CREATE TABLE `medicoveterinario` (
 
 LOCK TABLES `medicoveterinario` WRITE;
 /*!40000 ALTER TABLE `medicoveterinario` DISABLE KEYS */;
+INSERT INTO `medicoveterinario` VALUES (1,'Gustavo',985715324,'Jr Guardia Civil','M'),(2,'Miguel',975348895,'Jr 2 de mayo','M'),(3,'Karen',935627184,'Jr 28 de julio','F');
 /*!40000 ALTER TABLE `medicoveterinario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +81,8 @@ CREATE TABLE `propietario` (
   `nombre` varchar(50) DEFAULT NULL,
   `apellido` varchar(50) DEFAULT NULL,
   `telefono` int DEFAULT NULL,
-  `direccion` varchar(50) DEFAULT NULL
+  `direccion` varchar(50) DEFAULT NULL,
+  `sexo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -88,6 +92,7 @@ CREATE TABLE `propietario` (
 
 LOCK TABLES `propietario` WRITE;
 /*!40000 ALTER TABLE `propietario` DISABLE KEYS */;
+INSERT INTO `propietario` VALUES (1,'Estefany','Rodriguez',934478369,'Av. los cedros','F'),(2,'Mijhael','Bustillos',932577184,'Jr guardia civil','M'),(3,'Angel','Bustillos',958647214,'Jr guardia civil','M'),(4,'Angie','Urbina',958214357,'Jr 28 de julio','F');
 /*!40000 ALTER TABLE `propietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-26 17:09:40
+-- Dump completed on 2022-11-26 18:50:25
